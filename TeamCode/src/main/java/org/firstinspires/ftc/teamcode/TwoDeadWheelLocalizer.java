@@ -68,7 +68,7 @@ public final class TwoDeadWheelLocalizer implements Localizer {
         // Use degrees here to work around https://github.com/FIRST-Tech-Challenge/FtcRobotController/issues/1070
         AngularVelocity angularVelocityDegrees = imu.getRobotAngularVelocity(AngleUnit.DEGREES);
         AngularVelocity angularVelocity = new AngularVelocity(
-                UnnormalizedAngleUnit.RADIANS,
+                UnnormalizedAngleUnit.RADIANS.getNormalized(),
                 (float) Math.toRadians(angularVelocityDegrees.xRotationRate),
                 (float) Math.toRadians(angularVelocityDegrees.yRotationRate),
                 (float) Math.toRadians(angularVelocityDegrees.zRotationRate),
